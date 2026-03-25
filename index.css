@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 280 60% 97%;
+    --foreground: 270 40% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 40% 20%;
+
+    --primary: 280 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 80% 70%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 280 30% 92%;
+    --muted-foreground: 270 20% 50%;
+
+    --accent: 340 80% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 280 30% 88%;
+    --input: 280 30% 88%;
+    --ring: 280 70% 65%;
+
+    --radius: 1.25rem;
+
+    /* Custom photobooth tokens */
+    --pastel-pink: 340 80% 78%;
+    --pastel-blue: 200 80% 78%;
+    --pastel-green: 150 60% 75%;
+    --pastel-yellow: 45 90% 80%;
+    --pastel-orange: 25 90% 75%;
+    --pastel-purple: 280 70% 78%;
+
+    --gradient-fun: linear-gradient(135deg, hsl(280 70% 65%), hsl(340 80% 70%), hsl(190 80% 70%));
+    --gradient-warm: linear-gradient(135deg, hsl(340 80% 78%), hsl(25 90% 75%), hsl(45 90% 80%));
+    --gradient-cool: linear-gradient(135deg, hsl(200 80% 78%), hsl(280 70% 78%), hsl(340 80% 78%));
+
+    --shadow-playful: 0 8px 30px -8px hsl(280 70% 65% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(280 40% 50% / 0.15);
+
+    --font-display: 'Fredoka', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .shadow-playful {
+    box-shadow: var(--shadow-playful);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .gradient-fun {
+    background: var(--gradient-fun);
+  }
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .gradient-cool {
+    background: var(--gradient-cool);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
